@@ -19,24 +19,22 @@ def contact(request):
         name = request.POST.get('name')
         surname = request.POST.get('surname')
         email = request.POST.get('email')
-        contact = request.POST.get('contact')
+        contacts = request.POST.get('contact')
         message = request.POST.get('message')
         existing_customer = Customer.objects.filter(c_email=email).exists()
 
         if existing_customer:
             return render(request, 'home.html')
         else:
-            Customer.c_name = name
-            Customer.c_surname = surname
-            Customer.c_email = email
-            Customer.c_number = contact
-            Customer.c_message = message
-
-            Customer.save()
-
+            new_customer = Customer(
+                c_name=name,
+                c_surname=surname,
+                c_email=email,
+                c_number=contacts,
+                c_message=message
+            )
+            # Save the new instance to the database
+            new_customer.save()
             return render(request, 'succesfull.html')
-
-
-
     else:
         return render(request, '404.html')
