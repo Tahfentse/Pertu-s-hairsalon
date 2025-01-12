@@ -6,62 +6,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pertu's Hair Salon</title>
+    <link rel="icon" type="image/png" href="{% static 'constant/img/PertuLogo.png' %}">
     <style>
         body {
-            margin: 0;
+            background-color: black;
+            color: white;
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, pink, white);
+            margin: 0;
+            text-align: center;
+            gap: 2rem;
         }
         nav {
-            background-color: #D8A7B1; /* Dusty pink */
+            background-color: lightpink;
             padding: 1rem;
             display: flex;
+            align-items: center;
             justify-content: space-between;
+        }
+        nav .logo-container {
+            display: flex;
+            align-items: center;
         }
         nav a {
             text-decoration: none;
             color: white;
             font-weight: bold;
-            margin: 0 15px;
+            margin-right: 15px;
         }
         nav a:hover {
             text-decoration: underline;
         }
-        .container {
-            text-align: center;
-            margin: 2rem;
+        nav img {
+            margin-right: 10px;
         }
-        
+        .container {
+            padding: 2rem;
+            gap: 2rem;
+        }
         .title {
-            margin-top: 1rem;
-            font-size: 1.5rem;
+            font-size: 2em;
             font-weight: bold;
-            color: white; /* Dusty pink */
+            margin-bottom: 1rem;
         }
         .slideshow img {
-            width: 400px;
-            max-width: 400px;
-            height: auto;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
             opacity: 0;
             transition: opacity 1s ease-in-out;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
+            margin: 0 auto;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .features figure {
+            margin: 0;
+            text-align: center;
+        }
+        .features img {
+            width: 300px;
+            height: 300px;
+            border-radius: 8px;
+        }
+        .features figcaption {
+            font-weight: bold;
+            margin-top: 0.5rem;
+            color: #D8A7B1;
+        }
+        table {
+            margin: 2rem auto;
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 600px;
+        }
+        table th, table td {
+            border: 1px solid #D8A7B1;
+            padding: 8px;
+            text-align: left;
+            color: #1b1b1b;
+        }
+        table th {
+            background-color: #D8A7B1;
+            color: white;
+        }
+        table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        #contactus {
+            background-color: white;
+            color: black;
+            border: 2px solid #D8A7B1;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 400px;
+            margin: 2rem auto;
+            gap: 150px;
+        }
+        form p {
+            margin: 0.5rem 0;
+        }
+        form input, form textarea {
+            padding: 0.5rem;
+            margin-top: 0.25rem;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #D8A7B1;
+        }
+        form textarea {
+            height: 120px;
+        }
+        form button {
+            padding: 0.5rem 1rem;
+            background-color: #D8A7B1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        form button:hover {
+            background-color: #D08F9D;
         }
         footer {
             text-align: center;
             padding: 1rem;
-            background-color: #D8A7B1;
+            background-color: lightpink;
             color: white;
             position: fixed;
             bottom: 0;
             width: 100%;
         }
+        .container > * {
+            margin-bottom: 150px;
+        }
+        .details{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            color: black;
+            border: 2px solid #D8A7B1;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 600px;
+            margin: 2rem auto;
+            gap: 150px;
+        }
     </style>
 </head>
 <body>
     <nav>
-        <a href="#">Pertu's Hair Store</a>
+        <div class="logo-container">
+            <img src="{% static 'constant/img/PertuLogo.png' %}" width="60px" height="60px" alt="The logo"/>
+            <a href="/">Pertu's Hair Store</a>
+        </div>
         <div>
             <a href="#services">Services</a>
             <a href="#about-us">About Us</a>
@@ -71,9 +178,135 @@
     <div class="container">
         <div class="title">Welcome to Pertu's Hair Store</div>
         <div class="slideshow">
-            <img src="{% static 'constant/img/weave_3.jpeg' %}" alt="Hair Style 1" style="opacity: 1;">
-            <img src="{% static 'constant/img/weave_4.jpeg' %}" alt="Hair Style 2">
-            <img src="{% static 'constant/img/weave_5.jpeg' %}" alt="Hair Style 3">
+            <img src="{% static 'constant/img/PertuOne.jpeg' %}" alt="slideshow 1" style="opacity: 1;">
+            <img src="{% static 'constant/img/PertuTwo.jpeg' %}" alt="slideshow 2">
+            <img src="{% static 'constant/img/PertuThree.jpeg' %}" alt="slideshow 3">
+        </div>
+
+        <div class="features">
+            <figure>
+                <img src="{% static 'constant/img/PertuOne.jpeg' %}" alt="Curly Hair">
+                <figcaption>Curly Hair</figcaption>
+            </figure>
+            <figure>
+                <img src="{% static 'constant/img/PertuTwo.jpeg' %}" alt="Long Hair">
+                <figcaption>Long Hair</figcaption>
+            </figure>
+            <figure>
+                <img src="{% static 'constant/img/PertuThree.jpeg' %}" alt="Short Hair">
+                <figcaption>Short Hair</figcaption>
+            </figure>
+        </div>
+
+        <div class="table">
+            <label>Straight Hair</label>
+            <table>
+                <tr>
+                    <th>Size (inch)</th>
+                    <th>Price (R)</th>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>550</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>680</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>800</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>900</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>1100</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>1250</td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>1450</td>
+                </tr>
+            </table>
+            <br>
+            <label>Curly Hair</label>
+            <table>
+                <tr>
+                    <th>Size (Inches)</th>
+                    <th>Price (R)</th>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>850</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>980</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>1050</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>1350</td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>1500</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>1650</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="details">
+            <div class="detail">
+                <Label>
+                    <title> Banking Details </title>
+                </Label>
+                <p>Bank : Capitec </p>
+                <p>Account no : 1631908853</p>
+                <p>Branch code : 410090</p>
+                <p>Reference : Last4digitfromID+Yourname</p>
+            </div>
+            <div class="detail">
+                <label>Delivery</label>
+                <p>We deliver in 3-7 day working days</p>
+                <p>Delivery fee around Hammaskraal R70.00</p>
+                <p>Delivery via Paxi : R100.00 </p>
+            </div>
+
+        </div>
+
+        <div id="contactus">
+            <form action="/contact" method="POST">
+                {% csrf_token %}
+                <p>Name: <label for="name">
+                    <input type="text" id="name" name="name" required />
+                </label></p>
+                <p>Surname: <label for="surname">
+                    <input type="text" id="surname" name="surname" required />
+                </label></p>
+                <p>Email: <label for="email">
+                    <input type="email" id="email" name="email" required />
+                </label></p>
+                <p>Contact: <label for="contact">
+                    <input type="tel" id="contact" name="contact" required />
+                </label></p>
+                <p>Message: <label for="message">
+                    <textarea id="message" name="message" required></textarea>
+                </label></p>
+                <button type="submit">Send</button>
+            </form>
         </div>
     </div>
 
@@ -90,7 +323,7 @@
                 img.style.opacity = i === index ? '1' : '0';
             });
             index = (index + 1) % images.length;
-        }, 10000); // Change picture every 10 seconds
+        }, 6000); // Change picture every 6 seconds
     </script>
 </body>
 </html>

@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertu's Hair</title>
+    <style>
+        body {
+            background-color: black;
+            color: lightpink;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .header {
+            margin-top: 50px;
+        }
+        .header h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .shop-name {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .tagline {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .image-container {
+            margin: 20px;
+            border-radius: 50%;
+            overflow: hidden;
+            width: 400px;
+            height: 400px;
+            display: inline-block;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>WELCOME</h1>
+        <div class="shop-name">PERTU'S HAIR</div>
+        <div class="tagline">WIG IT! ROCK IT!</div>
+        <div class="image-container">
+            <a href="/home"><img src="{% static 'constant/img/PertuLogo1.jpeg' %}" alt="Model showcasing hair products"></a>
+        </div>
+    </div>
+</body>
+</html>
