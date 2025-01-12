@@ -38,3 +38,6 @@ def contact(request):
             return render(request, 'succesfull.html')
     else:
         return render(request, '404.html')
+
+def contact_us(request):
+    return render(request, 'contact.html')

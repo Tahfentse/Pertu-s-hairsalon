@@ -188,7 +188,7 @@
         </div>
         <div>
             <a href="#services">Services</a>
-            <a href="#about-us">About Us</a>
+            <a href="/contactus">About Us</a>
         </div>
     </nav>
 
@@ -206,12 +206,12 @@
                 <figcaption>Curly Hair</figcaption>
             </figure>
             <figure>
-                <img src="{% static 'constant/img/PertuTwo.jpeg' %}" alt="Long Hair">
-                <figcaption>Long Hair</figcaption>
+                <img src="{% static 'constant/img/PertuAllPic.jpeg' %}" alt="Curly Hair">
+                <figcaption> Hair </figcaption>
             </figure>
             <figure>
-                <img src="{% static 'constant/img/PertuThree.jpeg' %}" alt="Short Hair">
-                <figcaption>Short Hair</figcaption>
+                <img src="{% static 'constant/img/longHair2.png' %}" alt="Long Hair">
+                <figcaption>Long Hair</figcaption>
             </figure>
         </div>
 
@@ -352,7 +352,7 @@
                 img.style.opacity = i === index ? '1' : '0';
             });
             index = (index + 1) % images.length;
-        }, 6000); // Change picture every 6 seconds
+        }, 3000); // Change picture every 6 seconds
     </script>
 </body>
 </html>
